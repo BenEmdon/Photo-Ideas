@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (4.4.0)
+  - Argo (4.1.2):
+    - Runes (>= 4.0.0)
+  - Curry (3.0.0)
+  - Moya (8.0.3):
+    - Moya/Core (= 8.0.3)
+  - Moya/Core (8.0.3):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Result (3.2.1)
+  - Runes (4.0.1)
+  - SwiftyCam (2.2.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Argo
+  - Curry
+  - Moya
+  - SwiftyCam
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Argo: 5db06502fc1222d83011f574243089dab25202ff
+  Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
+  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
+  SwiftyCam: 966b67eeab2dfcfd0077eaa3c5a6bd69e1748af0
+
+PODFILE CHECKSUM: 929cdcb6a0c019fb1ffacb6f17c502d866ae5a1a
+
+COCOAPODS: 1.2.0

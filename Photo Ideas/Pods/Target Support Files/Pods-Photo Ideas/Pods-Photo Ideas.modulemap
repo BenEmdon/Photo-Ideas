@@ -1,0 +1,6 @@
+framework module Pods_Photo_Ideas {
+  umbrella header "Pods-Photo Ideas-umbrella.h"
+
+  export *
+  module * { export * }
+}
