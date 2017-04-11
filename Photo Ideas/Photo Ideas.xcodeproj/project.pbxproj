@@ -12,10 +12,11 @@
 		1D477FE01E98633500E2B535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D477FDF1E98633500E2B535 /* Assets.xcassets */; };
 		1D477FE31E98633500E2B535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D477FE11E98633500E2B535 /* LaunchScreen.storyboard */; };
 		1D477FEE1E98633500E2B535 /* Photo_IdeasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D477FED1E98633500E2B535 /* Photo_IdeasTests.swift */; };
+		1D91C1251E9D40F300584496 /* BaseCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D91C1241E9D40F300584496 /* BaseCameraViewController.swift */; };
 		1DDCE22F1E9C311B0039C082 /* PhotoIdeasAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE22E1E9C311B0039C082 /* PhotoIdeasAPI.swift */; };
 		1DDCE2311E9C36520039C082 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2301E9C36520039C082 /* ImageLoader.swift */; };
 		1DDCE2351E9C3C4C0039C082 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2341E9C3C4B0039C082 /* SwiftyRecordButton.swift */; };
-		1DDCE2371E9C3C7F0039C082 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2361E9C3C7F0039C082 /* CameraViewController.swift */; };
+		1DDCE2371E9C3C7F0039C082 /* CameraControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2361E9C3C7F0039C082 /* CameraControlViewController.swift */; };
 		1DDCE2391E9C3D190039C082 /* PhotoAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2381E9C3D190039C082 /* PhotoAnalysisViewController.swift */; };
 		1DDCE23C1E9C3D7A0039C082 /* PhotoAnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE23B1E9C3D7A0039C082 /* PhotoAnalysisViewModel.swift */; };
 		1DDCE2AD1E9C452E0039C082 /* Observable+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2AB1E9C452E0039C082 /* Observable+Argo.swift */; };
@@ -46,10 +47,11 @@
 		1D477FE91E98633500E2B535 /* Photo IdeasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo IdeasTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D477FED1E98633500E2B535 /* Photo_IdeasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_IdeasTests.swift; sourceTree = "<group>"; };
 		1D477FEF1E98633500E2B535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D91C1241E9D40F300584496 /* BaseCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCameraViewController.swift; sourceTree = "<group>"; };
 		1DDCE22E1E9C311B0039C082 /* PhotoIdeasAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoIdeasAPI.swift; sourceTree = "<group>"; };
 		1DDCE2301E9C36520039C082 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		1DDCE2341E9C3C4B0039C082 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
-		1DDCE2361E9C3C7F0039C082 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		1DDCE2361E9C3C7F0039C082 /* CameraControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraControlViewController.swift; sourceTree = "<group>"; };
 		1DDCE2381E9C3D190039C082 /* PhotoAnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAnalysisViewController.swift; sourceTree = "<group>"; };
 		1DDCE23B1E9C3D7A0039C082 /* PhotoAnalysisViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAnalysisViewModel.swift; sourceTree = "<group>"; };
 		1DDCE2AB1E9C452E0039C082 /* Observable+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Argo.swift"; sourceTree = "<group>"; };
@@ -142,7 +144,8 @@
 		1DDCE2331E9C3C3A0039C082 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1DDCE2361E9C3C7F0039C082 /* CameraViewController.swift */,
+				1DDCE2361E9C3C7F0039C082 /* CameraControlViewController.swift */,
+				1D91C1241E9D40F300584496 /* BaseCameraViewController.swift */,
 				1DDCE2381E9C3D190039C082 /* PhotoAnalysisViewController.swift */,
 			);
 			name = Controllers;
@@ -407,6 +410,7 @@
 			files = (
 				1DDCE2351E9C3C4C0039C082 /* SwiftyRecordButton.swift in Sources */,
 				1DDCE2AE1E9C452E0039C082 /* Response+Argo.swift in Sources */,
+				1D91C1251E9D40F300584496 /* BaseCameraViewController.swift in Sources */,
 				1DDCE23C1E9C3D7A0039C082 /* PhotoAnalysisViewModel.swift in Sources */,
 				1DDCE2B71E9C56E50039C082 /* UIImage+Extensions.swift in Sources */,
 				1DDCE2391E9C3D190039C082 /* PhotoAnalysisViewController.swift in Sources */,
@@ -415,7 +419,7 @@
 				1DDCE2B21E9C49C40039C082 /* Subject.swift in Sources */,
 				1DDCE2B51E9C51350039C082 /* UITableViewCell+Extensions.swift in Sources */,
 				1D477FD91E98633500E2B535 /* AppDelegate.swift in Sources */,
-				1DDCE2371E9C3C7F0039C082 /* CameraViewController.swift in Sources */,
+				1DDCE2371E9C3C7F0039C082 /* CameraControlViewController.swift in Sources */,
 				1DDCE2AD1E9C452E0039C082 /* Observable+Argo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,7 +29,6 @@ struct PhotoAnalysisViewModel {
 	private func requestSubjects(forImageData imageData: Data) -> Observable<[Subject]> {
 		return provider.request(.image(data: imageData))
 			.retry(2)
-			.debug()
 			.mapArray(type: Subject.self, keyPath: "subjects")
 	}
 }

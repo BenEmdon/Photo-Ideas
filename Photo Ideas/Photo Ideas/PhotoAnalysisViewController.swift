@@ -44,7 +44,7 @@ class PhotoAnalysisViewController: UIViewController {
 		cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
 
 		tableView.frame = view.bounds
-		tableView.backgroundColor = .clear
+		tableView.backgroundColor = .white
 		tableView.contentInset = UIEdgeInsets(top: view.bounds.height - 64, left: 0, bottom: 0, right: 0)
 		tableView.rowHeight = 64
 		tableView.separatorStyle = .none
@@ -63,6 +63,13 @@ class PhotoAnalysisViewController: UIViewController {
 		activityIndicator.startAnimating()
 
 		setupRx()
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		UIView.animate(withDuration: 0.1) { [weak self] in
+			self?.tableView.backgroundColor = .clear
+		}
 	}
 
 	func setupRx() {

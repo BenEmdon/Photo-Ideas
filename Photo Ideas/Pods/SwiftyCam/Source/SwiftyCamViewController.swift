@@ -1032,7 +1032,7 @@ extension SwiftyCamViewController {
 
 	*/
 
-	fileprivate func addGestureRecognizersTo(view: UIView) {
+	public func addGestureRecognizersTo(view: UIView) {
 		let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(zoomGesture(pinch:)))
 		pinchGesture.delegate = self
 		view.addGestureRecognizer(pinchGesture)
