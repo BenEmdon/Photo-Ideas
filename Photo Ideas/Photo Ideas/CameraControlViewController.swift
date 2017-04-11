@@ -34,21 +34,6 @@ class CameraControlViewController: UIViewController {
 		swiftyCam?.addGestureRecognizersTo(view: view)
 	}
 
-	@objc private func cameraSwitchAction(_ sender: Any) {
-		swiftyCam?.switchCamera()
-	}
-
-	@objc private func toggleFlashAction(_ sender: Any) {
-		guard let swiftyCam = swiftyCam else { return }
-		swiftyCam.flashEnabled = !swiftyCam.flashEnabled
-
-		if swiftyCam.flashEnabled {
-			flashButton.setImage(#imageLiteral(resourceName: "flash"), for: UIControlState())
-		} else {
-			flashButton.setImage(#imageLiteral(resourceName: "flashOutline"), for: UIControlState())
-		}
-	}
-
 	private func addButtons() {
 		captureButton = SwiftyRecordButton(
 			frame: CGRect(
@@ -73,11 +58,7 @@ class CameraControlViewController: UIViewController {
 		flipCameraButton.addTarget(self, action: #selector(cameraSwitchAction(_:)), for: .touchUpInside)
 		view.addSubview(flipCameraButton)
 
-		let test = CGFloat(
-			(view.frame.width - (view.frame.width / 2 + 37.5))
-				+	((view.frame.width / 2) - 37.5)
-				- 9.0
-		)
+		let test = CGFloat((view.frame.width - (view.frame.width / 2 + 37.5)) +	((view.frame.width / 2) - 37.5) - 9.0)
 
 		flashButton = UIButton(
 			frame: CGRect(
@@ -90,6 +71,17 @@ class CameraControlViewController: UIViewController {
 		flashButton.setImage(#imageLiteral(resourceName: "flashOutline"), for: UIControlState())
 		flashButton.addTarget(self, action: #selector(toggleFlashAction(_:)), for: .touchUpInside)
 		view.addSubview(flashButton)
+	}
+
+	@objc private func cameraSwitchAction(_ sender: Any) {
+		swiftyCam?.switchCamera()
+	}
+
+	@objc private func toggleFlashAction(_ sender: Any) {
+		guard let swiftyCam = swiftyCam else { return }
+		swiftyCam.flashEnabled = !swiftyCam.flashEnabled
+
+		flashButton.setImage(swiftyCam.flashEnabled ? #imageLiteral(resourceName: "flash"): #imageLiteral(resourceName: "flashOutline"), for: UIControlState())
 	}
 }
 
