@@ -29,6 +29,7 @@ class CameraControlViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		view.backgroundColor = .clear
 		addButtons()
 		swiftyCam?.cameraDelegate = self
 		swiftyCam?.addGestureRecognizersTo(view: view)

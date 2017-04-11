@@ -17,10 +17,9 @@ class SwiftyRecordButton: SwiftyCamButton {
 		super.init(frame: frame)
 		drawButton()
 	}
-
+	
 	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		drawButton()
+		fatalError("init(coder:) has not been implemented")
 	}
 
 	private func drawButton() {

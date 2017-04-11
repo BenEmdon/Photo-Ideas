@@ -24,3 +24,15 @@ extension Subject: Decodable {
 		<*> json <|? "_id"
 	}
 }
+
+extension Subject: Equatable {
+	public static func ==(lhs: Subject, rhs: Subject) -> Bool {
+		return lhs.id == rhs.id && lhs.description == rhs.description
+	}
+}
+
+extension Subject: Hashable {
+	var hashValue: Int {
+		return "\(id ?? "")_\(description)".hashValue
+	}
+}

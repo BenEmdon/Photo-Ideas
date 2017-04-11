@@ -7,29 +7,46 @@
 //
 
 import UIKit
+import Moya
+import RxCocoa
+import RxSwift
 
 class SubjectsListViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	let titleLabel = UILabel()
+	fileprivate let tableView = UITableView()
 
-        // Do any additional setup after loading the view.
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		view.backgroundColor = .clear
+		titleLabel.text = "Subjects"
+		titleLabel.font = UIFont.systemFont(ofSize: 40, weight: 10)
+		titleLabel.textColor = .white
+		tableView.backgroundColor = .white
+		layoutViews()
+		setupRx()
+	}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+	private func layoutViews() {
+		view.addSubview(titleLabel)
+		view.addSubview(tableView)
+		titleLabel.translatesAutoresizingMaskIntoConstraints = false
+		tableView.translatesAutoresizingMaskIntoConstraints = false
 
-    /*
-    // MARK: - Navigation
+		NSLayoutConstraint.activate([
+			titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+			titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+			titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+			tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+			tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+			tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+			tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
+			])
+	}
 
+	private func setupRx() {
+		let provider = RxMoyaProvider<PhotoIdeasAPI>()
+		
+	}
 }

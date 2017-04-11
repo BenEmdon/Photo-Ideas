@@ -22,7 +22,7 @@ class BaseCameraViewController: SwiftyCamViewController {
 	init() {
 		super.init(nibName: nil, bundle: nil)
 		orderedViewControllers = [
-			UIViewController(),
+			SubjectsListViewController(),
 			CameraControlViewController(swiftyCam: self)
 		]
 	}
@@ -36,9 +36,6 @@ class BaseCameraViewController: SwiftyCamViewController {
 		addChildViewController(pageViewController)
 		view.addSubview(pageViewController.view)
 		pageViewController.view.frame = view.bounds
-
-		orderedViewControllers.first!.view.backgroundColor = .white
-		orderedViewControllers.last!.view.backgroundColor = .clear
 
 		pageViewController.dataSource = self
 

@@ -6,4 +6,18 @@
 //  Copyright © 2017 Benjamin Emdon. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+
+struct SubjectManager {
+	static let sharedInstance = SubjectManager()
+
+	let activeSubjects = Variable<Set<Subject>>([])
+	let archivedSubjects = Variable<Set<Subject>>([])
+
+	func archive(subject: Subject) -> Bool {
+		guard let removedSubject = activeSubjects.value.remove(subject) else { return false }
+		let (inserted, _) = archivedSubjects.value.insert(removedSubject)
+		return inserted
+	}
+
+}

@@ -1,6 +1,6 @@
 //
-//  PeopleViewController.swift
-//  FaceDex
+//  PhotoAnalysisViewController.swift
+//  Photo Ideas
 //
 //  Created by Benjamin Emdon on 2017-02-04.
 //  Copyright © 2017 Benjamin Emdon. All rights reserved.
@@ -67,7 +67,7 @@ class PhotoAnalysisViewController: UIViewController {
 
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		UIView.animate(withDuration: 0.1) { [weak self] in
+		UIView.animate(withDuration: 0.3) { [weak self] in
 			self?.tableView.backgroundColor = .clear
 		}
 	}
@@ -90,7 +90,7 @@ class PhotoAnalysisViewController: UIViewController {
 	}
 
 	func cancel() {
-		dismiss(animated: true, completion: nil)
+		dismiss(animated: false, completion: nil)
 	}
 }
 

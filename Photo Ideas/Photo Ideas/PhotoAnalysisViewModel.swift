@@ -9,7 +9,6 @@
 import Moya
 import Argo
 import RxSwift
-import RxCocoa
 
 struct PhotoAnalysisViewModel {
 	private let provider: RxMoyaProvider<PhotoIdeasAPI>
