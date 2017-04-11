@@ -7,12 +7,18 @@
 //
 
 import RxSwift
+import SQLite
 
 struct SubjectManager {
 	static let sharedInstance = SubjectManager()
 
 	let activeSubjects = Variable<Set<Subject>>([])
 	let archivedSubjects = Variable<Set<Subject>>([])
+	
+
+	init() {
+		
+	}
 
 	func archive(subject: Subject) -> Bool {
 		guard let removedSubject = activeSubjects.value.remove(subject) else { return false }

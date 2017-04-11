@@ -16,6 +16,9 @@ PODS:
   - RxCocoa (3.4.0):
     - RxSwift (~> 3.4)
   - RxSwift (3.4.0)
+  - SQLite.swift (0.11.3):
+    - SQLite.swift/standard (= 0.11.3)
+  - SQLite.swift/standard (0.11.3)
   - SwiftyCam (2.2.1)
 
 DEPENDENCIES:
@@ -25,6 +28,7 @@ DEPENDENCIES:
   - Moya
   - Moya/RxSwift
   - RxCocoa
+  - SQLite.swift (~> 0.11.3)
   - SwiftyCam
 
 SPEC CHECKSUMS:
@@ -36,8 +40,9 @@ SPEC CHECKSUMS:
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
   RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
   RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
+  SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
   SwiftyCam: 966b67eeab2dfcfd0077eaa3c5a6bd69e1748af0
 
-PODFILE CHECKSUM: deee3cd839903908c5fefe691c39b175c1c3e167
+PODFILE CHECKSUM: eb8641a1a9e717de1a135fcab9ceade9bbf74433
 
 COCOAPODS: 1.2.0

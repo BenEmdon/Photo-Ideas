@@ -13,6 +13,7 @@ target 'Photo Ideas' do
   pod "SwiftyCam"
   pod 'RxCocoa'
   pod 'Moya/RxSwift'
+  pod 'SQLite.swift', '~> 0.11.3'
 
   target 'Photo IdeasTests' do
     inherit! :search_paths
