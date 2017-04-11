@@ -14,6 +14,7 @@ import RxSwift
 class SubjectsListViewController: UIViewController {
 
 	let titleLabel = UILabel()
+	private let disposeBag = DisposeBag()
 	fileprivate let tableView = UITableView()
 
 	override func viewDidLoad() {
@@ -22,7 +23,11 @@ class SubjectsListViewController: UIViewController {
 		titleLabel.text = "Subjects"
 		titleLabel.font = UIFont.systemFont(ofSize: 40, weight: 10)
 		titleLabel.textColor = .white
+
 		tableView.backgroundColor = .white
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.cellIdentifier)
+
+
 		layoutViews()
 		setupRx()
 	}
@@ -47,6 +52,16 @@ class SubjectsListViewController: UIViewController {
 
 	private func setupRx() {
 		let provider = RxMoyaProvider<PhotoIdeasAPI>()
+		let viewModel = SubjectsViewModel(provider: provider)
+
+		viewModel.activeSubjects.bind(to: tableView.rx.items(
+			cellIdentifier: UITableViewCell.cellIdentifier,
+			cellType: UITableViewCell.self)
+		) { (row, element, cell) in
+			cell.textLabel?.text = element.description
+			}
+			.addDisposableTo(disposeBag)
+
 		
 	}
 }

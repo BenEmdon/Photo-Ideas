@@ -12,8 +12,8 @@ import Curry
 
 struct Subject {
 	let description: String
-	let score: Float
-	let id: String?
+	let score: Float?
+	let id: String
 }
 
 extension Subject: Decodable {
@@ -21,7 +21,7 @@ extension Subject: Decodable {
 		return curry(self.init)
 		<^> json <| "description"
 		<*> json <| "score"
-		<*> json <|? "_id"
+		<*> json <| "_id"
 	}
 }
 
@@ -33,6 +33,6 @@ extension Subject: Equatable {
 
 extension Subject: Hashable {
 	var hashValue: Int {
-		return "\(id ?? "")_\(description)".hashValue
+		return "\(id)_\(description)".hashValue
 	}
 }
