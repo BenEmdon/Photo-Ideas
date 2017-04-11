@@ -11,6 +11,8 @@ target 'Photo Ideas' do
   pod "Argo"
   pod "Curry"
   pod "SwiftyCam"
+  pod 'RxCocoa'
+  pod 'Moya/RxSwift'
 
   target 'Photo IdeasTests' do
     inherit! :search_paths

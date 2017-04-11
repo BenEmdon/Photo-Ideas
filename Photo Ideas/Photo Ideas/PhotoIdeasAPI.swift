@@ -51,7 +51,7 @@ extension PhotoIdeasAPI: TargetType {
 	}
 
 	var parameterEncoding: ParameterEncoding {
-		return URLEncoding.default
+		return JSONEncoding.default
 	}
 
 	var task: Task {

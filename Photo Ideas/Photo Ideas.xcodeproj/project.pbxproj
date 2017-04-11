@@ -9,12 +9,20 @@
 /* Begin PBXBuildFile section */
 		1A2340ADF32A7EE135167731 /* Pods_Photo_IdeasTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01547B4CD58A091470655AD0 /* Pods_Photo_IdeasTests.framework */; };
 		1D477FD91E98633500E2B535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D477FD81E98633500E2B535 /* AppDelegate.swift */; };
-		1D477FDB1E98633500E2B535 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D477FDA1E98633500E2B535 /* ViewController.swift */; };
 		1D477FE01E98633500E2B535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D477FDF1E98633500E2B535 /* Assets.xcassets */; };
 		1D477FE31E98633500E2B535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D477FE11E98633500E2B535 /* LaunchScreen.storyboard */; };
 		1D477FEE1E98633500E2B535 /* Photo_IdeasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D477FED1E98633500E2B535 /* Photo_IdeasTests.swift */; };
 		1DDCE22F1E9C311B0039C082 /* PhotoIdeasAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE22E1E9C311B0039C082 /* PhotoIdeasAPI.swift */; };
 		1DDCE2311E9C36520039C082 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2301E9C36520039C082 /* ImageLoader.swift */; };
+		1DDCE2351E9C3C4C0039C082 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2341E9C3C4B0039C082 /* SwiftyRecordButton.swift */; };
+		1DDCE2371E9C3C7F0039C082 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2361E9C3C7F0039C082 /* CameraViewController.swift */; };
+		1DDCE2391E9C3D190039C082 /* PhotoAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2381E9C3D190039C082 /* PhotoAnalysisViewController.swift */; };
+		1DDCE23C1E9C3D7A0039C082 /* PhotoAnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE23B1E9C3D7A0039C082 /* PhotoAnalysisViewModel.swift */; };
+		1DDCE2AD1E9C452E0039C082 /* Observable+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2AB1E9C452E0039C082 /* Observable+Argo.swift */; };
+		1DDCE2AE1E9C452E0039C082 /* Response+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2AC1E9C452E0039C082 /* Response+Argo.swift */; };
+		1DDCE2B21E9C49C40039C082 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2B11E9C49C40039C082 /* Subject.swift */; };
+		1DDCE2B51E9C51350039C082 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2B41E9C51350039C082 /* UITableViewCell+Extensions.swift */; };
+		1DDCE2B71E9C56E50039C082 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2B61E9C56E50039C082 /* UIImage+Extensions.swift */; };
 		91E3CA13DA45B7EDE5164851 /* Pods_Photo_Ideas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D62BD2083781BA1BDB71D37 /* Pods_Photo_Ideas.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +40,6 @@
 		01547B4CD58A091470655AD0 /* Pods_Photo_IdeasTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo_IdeasTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D477FD51E98633500E2B535 /* Photo Ideas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Ideas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D477FD81E98633500E2B535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D477FDA1E98633500E2B535 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D477FDF1E98633500E2B535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D477FE21E98633500E2B535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D477FE41E98633500E2B535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +48,15 @@
 		1D477FEF1E98633500E2B535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DDCE22E1E9C311B0039C082 /* PhotoIdeasAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoIdeasAPI.swift; sourceTree = "<group>"; };
 		1DDCE2301E9C36520039C082 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		1DDCE2341E9C3C4B0039C082 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
+		1DDCE2361E9C3C7F0039C082 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		1DDCE2381E9C3D190039C082 /* PhotoAnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAnalysisViewController.swift; sourceTree = "<group>"; };
+		1DDCE23B1E9C3D7A0039C082 /* PhotoAnalysisViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAnalysisViewModel.swift; sourceTree = "<group>"; };
+		1DDCE2AB1E9C452E0039C082 /* Observable+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Argo.swift"; sourceTree = "<group>"; };
+		1DDCE2AC1E9C452E0039C082 /* Response+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+Argo.swift"; sourceTree = "<group>"; };
+		1DDCE2B11E9C49C40039C082 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		1DDCE2B41E9C51350039C082 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		1DDCE2B61E9C56E50039C082 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		2D62BD2083781BA1BDB71D37 /* Pods_Photo_Ideas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo_Ideas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC8AA05807ECAB87C1247C5 /* Pods-Photo Ideas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Ideas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Ideas/Pods-Photo Ideas.debug.xcconfig"; sourceTree = "<group>"; };
 		654A894C969A65CF362E98E1 /* Pods-Photo Ideas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Ideas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Ideas/Pods-Photo Ideas.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,8 +109,11 @@
 			children = (
 				1D477FD81E98633500E2B535 /* AppDelegate.swift */,
 				1DDCE22E1E9C311B0039C082 /* PhotoIdeasAPI.swift */,
-				1D477FDA1E98633500E2B535 /* ViewController.swift */,
 				1DDCE2301E9C36520039C082 /* ImageLoader.swift */,
+				1DDCE2B31E9C49C80039C082 /* Models */,
+				1DDCE23A1E9C3D3A0039C082 /* View Models */,
+				1DDCE2321E9C3C1C0039C082 /* Views */,
+				1DDCE2B01E9C458D0039C082 /* Extensions */,
 				1D477FDF1E98633500E2B535 /* Assets.xcassets */,
 				1D477FE11E98633500E2B535 /* LaunchScreen.storyboard */,
 				1D477FE41E98633500E2B535 /* Info.plist */,
@@ -109,6 +128,59 @@
 				1D477FEF1E98633500E2B535 /* Info.plist */,
 			);
 			path = "Photo IdeasTests";
+			sourceTree = "<group>";
+		};
+		1DDCE2321E9C3C1C0039C082 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1DDCE2331E9C3C3A0039C082 /* Controllers */,
+				1DDCE2341E9C3C4B0039C082 /* SwiftyRecordButton.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1DDCE2331E9C3C3A0039C082 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1DDCE2361E9C3C7F0039C082 /* CameraViewController.swift */,
+				1DDCE2381E9C3D190039C082 /* PhotoAnalysisViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1DDCE23A1E9C3D3A0039C082 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DDCE23B1E9C3D7A0039C082 /* PhotoAnalysisViewModel.swift */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		1DDCE2AF1E9C45380039C082 /* Moya+Argo/Rx */ = {
+			isa = PBXGroup;
+			children = (
+				1DDCE2AB1E9C452E0039C082 /* Observable+Argo.swift */,
+				1DDCE2AC1E9C452E0039C082 /* Response+Argo.swift */,
+			);
+			name = "Moya+Argo/Rx";
+			sourceTree = "<group>";
+		};
+		1DDCE2B01E9C458D0039C082 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1DDCE2AF1E9C45380039C082 /* Moya+Argo/Rx */,
+				1DDCE2B41E9C51350039C082 /* UITableViewCell+Extensions.swift */,
+				1DDCE2B61E9C56E50039C082 /* UIImage+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		1DDCE2B31E9C49C80039C082 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DDCE2B11E9C49C40039C082 /* Subject.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		9E81E8774FB50504519B3478 /* Pods */ = {
@@ -187,6 +259,7 @@
 				TargetAttributes = {
 					1D477FD41E98633500E2B535 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = E299TDEV8Z;
 						ProvisioningStyle = Automatic;
 					};
 					1D477FE81E98633500E2B535 = {
@@ -332,10 +405,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDCE2351E9C3C4C0039C082 /* SwiftyRecordButton.swift in Sources */,
+				1DDCE2AE1E9C452E0039C082 /* Response+Argo.swift in Sources */,
+				1DDCE23C1E9C3D7A0039C082 /* PhotoAnalysisViewModel.swift in Sources */,
+				1DDCE2B71E9C56E50039C082 /* UIImage+Extensions.swift in Sources */,
+				1DDCE2391E9C3D190039C082 /* PhotoAnalysisViewController.swift in Sources */,
 				1DDCE22F1E9C311B0039C082 /* PhotoIdeasAPI.swift in Sources */,
-				1D477FDB1E98633500E2B535 /* ViewController.swift in Sources */,
 				1DDCE2311E9C36520039C082 /* ImageLoader.swift in Sources */,
+				1DDCE2B21E9C49C40039C082 /* Subject.swift in Sources */,
+				1DDCE2B51E9C51350039C082 /* UITableViewCell+Extensions.swift in Sources */,
 				1D477FD91E98633500E2B535 /* AppDelegate.swift in Sources */,
+				1DDCE2371E9C3C7F0039C082 /* CameraViewController.swift in Sources */,
+				1DDCE2AD1E9C452E0039C082 /* Observable+Argo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +550,9 @@
 			baseConfigurationReference = 4EC8AA05807ECAB87C1247C5 /* Pods-Photo Ideas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E299TDEV8Z;
 				INFOPLIST_FILE = "Photo Ideas/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.benemdon.Photo-Ideas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,7 +565,9 @@
 			baseConfigurationReference = 654A894C969A65CF362E98E1 /* Pods-Photo Ideas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E299TDEV8Z;
 				INFOPLIST_FILE = "Photo Ideas/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.benemdon.Photo-Ideas";
 				PRODUCT_NAME = "$(TARGET_NAME)";

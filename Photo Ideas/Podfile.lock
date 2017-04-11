@@ -8,8 +8,14 @@ PODS:
   - Moya/Core (8.0.3):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
+  - Moya/RxSwift (8.0.3):
+    - Moya/Core
+    - RxSwift (~> 3.0)
   - Result (3.2.1)
   - Runes (4.0.1)
+  - RxCocoa (3.4.0):
+    - RxSwift (~> 3.4)
+  - RxSwift (3.4.0)
   - SwiftyCam (2.2.1)
 
 DEPENDENCIES:
@@ -17,6 +23,8 @@ DEPENDENCIES:
   - Argo
   - Curry
   - Moya
+  - Moya/RxSwift
+  - RxCocoa
   - SwiftyCam
 
 SPEC CHECKSUMS:
@@ -26,8 +34,10 @@ SPEC CHECKSUMS:
   Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
+  RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
+  RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
   SwiftyCam: 966b67eeab2dfcfd0077eaa3c5a6bd69e1748af0
 
-PODFILE CHECKSUM: 929cdcb6a0c019fb1ffacb6f17c502d866ae5a1a
+PODFILE CHECKSUM: deee3cd839903908c5fefe691c39b175c1c3e167
 
 COCOAPODS: 1.2.0
