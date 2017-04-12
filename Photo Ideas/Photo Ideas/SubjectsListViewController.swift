@@ -16,6 +16,17 @@ class SubjectsListViewController: UIViewController {
 	let titleLabel = UILabel()
 	private let disposeBag = DisposeBag()
 	fileprivate let tableView = UITableView()
+	let provider = RxMoyaProvider<PhotoIdeasAPI>(plugins: [NetworkLoggerPlugin(verbose: true)])
+	let viewModel: SubjectsViewModel
+
+	init() {
+		viewModel = SubjectsViewModel(provider: provider)
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -51,14 +62,15 @@ class SubjectsListViewController: UIViewController {
 	}
 
 	private func setupRx() {
-		let provider = RxMoyaProvider<PhotoIdeasAPI>()
-		let viewModel = SubjectsViewModel(provider: provider)
 
-		viewModel.activeSubjects.bind(to: tableView.rx.items(
+		viewModel.activeSubjects
+			.asObservable()
+			.bind(to: tableView.rx.items(
 			cellIdentifier: UITableViewCell.cellIdentifier,
 			cellType: UITableViewCell.self)
 		) { (row, element, cell) in
 			cell.textLabel?.text = element.description
+			cell.backgroundColor = element.archived ? .green : .white
 			}
 			.addDisposableTo(disposeBag)
 

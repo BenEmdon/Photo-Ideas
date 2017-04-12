@@ -85,6 +85,7 @@ class PhotoAnalysisViewController: UIViewController {
 				cellType: UITableViewCell.self)
 			) { (row, element, cell) in
 				cell.textLabel?.text = element.description
+				cell.backgroundColor = element.archived ? .green : .white
 			}
 			.addDisposableTo(disposeBag)
 	}

@@ -12,6 +12,7 @@
 		1D477FE01E98633500E2B535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D477FDF1E98633500E2B535 /* Assets.xcassets */; };
 		1D477FE31E98633500E2B535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D477FE11E98633500E2B535 /* LaunchScreen.storyboard */; };
 		1D477FEE1E98633500E2B535 /* Photo_IdeasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D477FED1E98633500E2B535 /* Photo_IdeasTests.swift */; };
+		1D687CE61E9DACA6000DBF55 /* ActiveSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D687CE51E9DACA6000DBF55 /* ActiveSubject.swift */; };
 		1D91C1251E9D40F300584496 /* BaseCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D91C1241E9D40F300584496 /* BaseCameraViewController.swift */; };
 		1DDCE22F1E9C311B0039C082 /* PhotoIdeasAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE22E1E9C311B0039C082 /* PhotoIdeasAPI.swift */; };
 		1DDCE2351E9C3C4C0039C082 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2341E9C3C4B0039C082 /* SwiftyRecordButton.swift */; };
@@ -25,8 +26,6 @@
 		1DDCE2B71E9C56E50039C082 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCE2B61E9C56E50039C082 /* UIImage+Extensions.swift */; };
 		1DF1CBAF1E9D675E00CC2470 /* SubjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1CBAE1E9D675E00CC2470 /* SubjectsListViewController.swift */; };
 		1DF1CBD41E9D6ECF00CC2470 /* SubjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1CBD31E9D6ECF00CC2470 /* SubjectsViewModel.swift */; };
-		1DF1CBD81E9D711F00CC2470 /* SubjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1CBD71E9D711F00CC2470 /* SubjectManager.swift */; };
-		1DF1CBDC1E9D7B7B00CC2470 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1CBDB1E9D7B7B00CC2470 /* DatabaseManager.swift */; };
 		91E3CA13DA45B7EDE5164851 /* Pods_Photo_Ideas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D62BD2083781BA1BDB71D37 /* Pods_Photo_Ideas.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +49,7 @@
 		1D477FE91E98633500E2B535 /* Photo IdeasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo IdeasTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D477FED1E98633500E2B535 /* Photo_IdeasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_IdeasTests.swift; sourceTree = "<group>"; };
 		1D477FEF1E98633500E2B535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D687CE51E9DACA6000DBF55 /* ActiveSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveSubject.swift; sourceTree = "<group>"; };
 		1D91C1241E9D40F300584496 /* BaseCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCameraViewController.swift; sourceTree = "<group>"; };
 		1DDCE22E1E9C311B0039C082 /* PhotoIdeasAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoIdeasAPI.swift; sourceTree = "<group>"; };
 		1DDCE2341E9C3C4B0039C082 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
@@ -63,8 +63,6 @@
 		1DDCE2B61E9C56E50039C082 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		1DF1CBAE1E9D675E00CC2470 /* SubjectsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsListViewController.swift; sourceTree = "<group>"; };
 		1DF1CBD31E9D6ECF00CC2470 /* SubjectsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsViewModel.swift; sourceTree = "<group>"; };
-		1DF1CBD71E9D711F00CC2470 /* SubjectManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectManager.swift; sourceTree = "<group>"; };
-		1DF1CBDB1E9D7B7B00CC2470 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		2D62BD2083781BA1BDB71D37 /* Pods_Photo_Ideas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo_Ideas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC8AA05807ECAB87C1247C5 /* Pods-Photo Ideas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Ideas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Ideas/Pods-Photo Ideas.debug.xcconfig"; sourceTree = "<group>"; };
 		654A894C969A65CF362E98E1 /* Pods-Photo Ideas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Ideas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Ideas/Pods-Photo Ideas.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,8 +115,7 @@
 			children = (
 				1D477FD81E98633500E2B535 /* AppDelegate.swift */,
 				1DDCE22E1E9C311B0039C082 /* PhotoIdeasAPI.swift */,
-				1DF1CBD71E9D711F00CC2470 /* SubjectManager.swift */,
-				1DF1CBDB1E9D7B7B00CC2470 /* DatabaseManager.swift */,
+				1D687CE51E9DACA6000DBF55 /* ActiveSubject.swift */,
 				1DDCE2B31E9C49C80039C082 /* Models */,
 				1DDCE23A1E9C3D3A0039C082 /* View Models */,
 				1DDCE2321E9C3C1C0039C082 /* Views */,
@@ -417,7 +414,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DF1CBDC1E9D7B7B00CC2470 /* DatabaseManager.swift in Sources */,
 				1DDCE2351E9C3C4C0039C082 /* SwiftyRecordButton.swift in Sources */,
 				1DDCE2AE1E9C452E0039C082 /* Response+Argo.swift in Sources */,
 				1D91C1251E9D40F300584496 /* BaseCameraViewController.swift in Sources */,
@@ -427,7 +423,7 @@
 				1DDCE2391E9C3D190039C082 /* PhotoAnalysisViewController.swift in Sources */,
 				1DDCE22F1E9C311B0039C082 /* PhotoIdeasAPI.swift in Sources */,
 				1DDCE2B21E9C49C40039C082 /* Subject.swift in Sources */,
-				1DF1CBD81E9D711F00CC2470 /* SubjectManager.swift in Sources */,
+				1D687CE61E9DACA6000DBF55 /* ActiveSubject.swift in Sources */,
 				1DDCE2B51E9C51350039C082 /* UITableViewCell+Extensions.swift in Sources */,
 				1DF1CBAF1E9D675E00CC2470 /* SubjectsListViewController.swift in Sources */,
 				1D477FD91E98633500E2B535 /* AppDelegate.swift in Sources */,

@@ -14,45 +14,39 @@ import RxCocoa
 class SubjectsViewModel {
 	private let provider: RxMoyaProvider<PhotoIdeasAPI>
 	private let disposeBag = DisposeBag()
-	private let subjectManager = SubjectManager.sharedInstance
-
-	var activeSubjects: Observable<[Subject]> {
-		return subjectManager.activeSubjects.asObservable()
-	}
-
-	var archivedSubjects: Driver<[Subject]> {
-		return subjectManager.archivedSubjects.asDriver()
+	let activeSubjects = ActiveSubjects.sharedInstance.subjects
+	var lastId: String? = nil {
+		didSet {
+			UserDefaults.standard.set(lastId, forKey: "lastId")
+		}
 	}
 
 	init(provider: RxMoyaProvider<PhotoIdeasAPI>) {
 		self.provider = provider
-		subjectManager.updateInMemoryModel()
-		checkIfRequestNeeded()
-	}
+		lastId = UserDefaults.standard.string(forKey: "lastId")
 
-	func getNewSubjects() {
-		let allSubjectsSortedById = (subjectManager.activeSubjects.value + subjectManager.archivedSubjects.value).sorted { (subA, subB) -> Bool in
-			return subA.id > subB.id
-		}
-		getSubjects(id: allSubjectsSortedById.last?.id)
-			.subscribe(onNext: { [weak self] (newSubjects) in
-				newSubjects.forEach({ (subject) in
-					self?.subjectManager.insert(subject: subject)
-				})
-			})
-		.addDisposableTo(disposeBag)
-	}
-
-	func checkIfRequestNeeded() {
-		subjectManager.completionTrigger
-			.asObservable()
-			.subscribe(onNext: { [weak self] (_) in
-				guard let strongSelf = self else { return }
-				guard strongSelf.subjectManager.activeSubjects.value.isEmpty else { return }
-				strongSelf.getNewSubjects()
+		activeSubjects.asObservable().subscribe(onNext: { [weak self] (subjects) in
+				if subjects.isEmpty {
+					self?.fetchSubjects()
+				}
 			})
 			.addDisposableTo(disposeBag)
 	}
+
+	func fetchSubjects() {
+		getSubjects(id: lastId)
+			.subscribe(onNext: { [weak self] (subjects) in
+				self?.activeSubjects.value = Set(subjects)
+				self?.lastId = subjects
+					.sorted { (subjectA, subjectB) -> Bool in
+						return subjectA.id > subjectB.id
+					}
+					.filter{ !$0.archived }
+					.first?.id
+			})
+			.addDisposableTo(disposeBag)
+	}
+
 
 	// network
 	private func getSubjects(id: String?) -> Observable<[Subject]> {

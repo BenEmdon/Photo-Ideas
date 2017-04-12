@@ -14,13 +14,28 @@ struct Subject {
 	let description: String
 	let score: Float?
 	let id: String
+	let archived: Bool
+
+	init(description: String, score: Float?, id: String) {
+		self.description = description
+		self.score = score
+		self.id = id
+		archived = false
+	}
+
+	init(description: String, score: Float?, id: String, archived: Bool) {
+		self.description = description
+		self.score = score
+		self.id = id
+		self.archived = archived
+	}
 }
 
 extension Subject: Decodable {
 	static func decode(_ json: JSON) -> Decoded<Subject> {
 		return curry(self.init)
 		<^> json <| "description"
-		<*> json <| "score"
+		<*> json <|? "score"
 		<*> json <| "_id"
 	}
 }
@@ -33,6 +48,6 @@ extension Subject: Equatable {
 
 extension Subject: Hashable {
 	var hashValue: Int {
-		return "\(id)_\(description)".hashValue
+		return "\(id)_\(description)_\(archived)".hashValue
 	}
 }
