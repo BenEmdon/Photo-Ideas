@@ -8,6 +8,7 @@
 
 import RxSwift
 
+/// Global subjects set to be managed and observed by anyone (thread safe)
 struct ActiveSubjects {
 	static let sharedInstance = ActiveSubjects()
 	let subjects = Variable<Set<Subject>>([])

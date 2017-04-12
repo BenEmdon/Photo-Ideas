@@ -10,6 +10,7 @@ import Argo
 import Runes
 import Curry
 
+/// Subject model that hosts all subject related information
 struct Subject {
 	let description: String
 	let score: Float?
@@ -31,6 +32,7 @@ struct Subject {
 	}
 }
 
+// MARK: - Subject adopts the Decodable protocol. Argo is an object mapper that uses Runes (the <^> <*> <*> syntax) to turn JSON into strongly typed objects
 extension Subject: Decodable {
 	static func decode(_ json: JSON) -> Decoded<Subject> {
 		return curry(self.init)

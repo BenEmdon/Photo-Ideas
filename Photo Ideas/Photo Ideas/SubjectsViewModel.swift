@@ -11,12 +11,16 @@ import Argo
 import RxSwift
 import RxCocoa
 
+/// SubjectsViewModel controls all the logic related to the SubjectsViewCntroller
 class SubjectsViewModel {
+
 	private let provider: RxMoyaProvider<PhotoIdeasAPI>
 	private let disposeBag = DisposeBag()
 	private let modelSelected: ControlEvent<Subject>
 	let activeSubjects = ActiveSubjects.sharedInstance.subjects
 
+	/// The last id to query for subjects
+	/// saves the id to UserDefaults
 	var lastId: String? = nil {
 		didSet {
 			UserDefaults.standard.set(lastId, forKey: "lastId")
@@ -26,21 +30,27 @@ class SubjectsViewModel {
 	init(provider: RxMoyaProvider<PhotoIdeasAPI>, modelSelected: ControlEvent<Subject>) {
 		self.provider = provider
 		self.modelSelected = modelSelected
+
 		lastId = UserDefaults.standard.string(forKey: "lastId")
 
-		activeSubjects.asObservable().subscribe(onNext: { [weak self] (subjects) in
+		// subscribes to the active subjects and fetches more when there are none left
+		activeSubjects.asObservable()
+			.subscribe(onNext: { [weak self] (subjects) in
 				if subjects.filter({ !$0.archived }).isEmpty {
 					self?.fetchSubjects()
 				}
 			})
 			.addDisposableTo(disposeBag)
 
+		// subscribes to table selections and removes a subject from the active subjects when the subject is selected
 		modelSelected.subscribe(onNext: { (subject) in
+			guard !subject.archived else { return }
 				self.activeSubjects.value.remove(subject)
 			})
 			.addDisposableTo(disposeBag)
 	}
 
+	/// fetches subjects on invocation and detemines which id (if any) to query
 	func fetchSubjects() {
 		getSubjects(id: lastId)
 			.subscribe(onNext: { [weak self] (subjects) in
@@ -56,7 +66,7 @@ class SubjectsViewModel {
 	}
 
 
-	// network
+	/// Makes a GET request to the PhotoIdeasAPI, retrying twice if the request fails, and returns an array of Subjects
 	private func getSubjects(id: String?) -> Observable<[Subject]> {
 		return provider.request(.subjects(id: id))
 			.retry(2)

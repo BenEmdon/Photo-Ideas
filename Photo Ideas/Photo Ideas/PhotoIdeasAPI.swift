@@ -9,12 +9,18 @@
 import Foundation
 import Moya
 
+
+/// The TargetType for a HTTPS custom endpoint
+///
+/// - image: the image route
+/// - subjects: the subjects route
 enum PhotoIdeasAPI {
 	case image(data: Data)
 	case subjects(id: String?)
 }
 
 extension PhotoIdeasAPI: TargetType {
+
 	var baseURL: URL { return URL(string: "https://photo-ideas-backend.herokuapp.com")! }
 
 	var path: String {
