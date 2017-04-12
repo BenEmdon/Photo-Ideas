@@ -24,8 +24,8 @@ class PhotoAnalysisViewController: UIViewController {
 
 	init(image: UIImage) {
 		imageData = UIImageJPEGRepresentation(image.resizeWith(percentage: 0.4)!, 0.4)!
-		
-		backgroundImage = UIImage(data: imageData)!
+		backgroundImage = image
+//	 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
 		super.init(nibName: nil, bundle: nil)
 	}
 
@@ -45,7 +45,7 @@ class PhotoAnalysisViewController: UIViewController {
 
 		tableView.frame = view.bounds
 		tableView.backgroundColor = .white
-		tableView.contentInset = UIEdgeInsets(top: view.bounds.height - 64, left: 0, bottom: 0, right: 0)
+		tableView.contentInset = UIEdgeInsets(top: view.bounds.height - 98, left: 0, bottom: 0, right: 0)
 		tableView.rowHeight = 64
 		tableView.separatorStyle = .none
 		tableView.register(PhotoAnalysisTableViewCell.self, forCellReuseIdentifier: PhotoAnalysisTableViewCell.cellIdentifier)

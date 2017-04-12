@@ -11,8 +11,7 @@ import SwiftyCam
 
 class BaseCameraViewController: SwiftyCamViewController {
 
-	let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .vertical, options: nil)
-
+	private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .vertical, options: nil)
 	fileprivate var orderedViewControllers: [UIViewController]!
 
 	override var prefersStatusBarHidden: Bool {
@@ -33,12 +32,11 @@ class BaseCameraViewController: SwiftyCamViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
 		addChildViewController(pageViewController)
 		view.addSubview(pageViewController.view)
 		pageViewController.view.frame = view.bounds
-
 		pageViewController.dataSource = self
-
 		pageViewController.setViewControllers([orderedViewControllers.last!], direction: .forward, animated: true)
 	}
 }

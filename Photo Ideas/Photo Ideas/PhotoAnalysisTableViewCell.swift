@@ -50,7 +50,7 @@ class PhotoAnalysisTableViewCell: UITableViewCell {
 		descriptionLabel.text = subjectDescription
 
 		if let score = score {
-			scoreLabel.text = "%\(String(format: "%.3f", score))"
+			scoreLabel.text = "%\(String(format: "%.0f", score * 100))"
 			scoreLabel.textColor = score > 0.8 ? .green : score > 0.5 ? .orange : .red
 		}
 
