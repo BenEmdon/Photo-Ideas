@@ -48,7 +48,8 @@ class PhotoAnalysisViewController: UIViewController {
 		tableView.contentInset = UIEdgeInsets(top: view.bounds.height - 64, left: 0, bottom: 0, right: 0)
 		tableView.rowHeight = 64
 		tableView.separatorStyle = .none
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.cellIdentifier)
+		tableView.register(PhotoAnalysisTableViewCell.self, forCellReuseIdentifier: PhotoAnalysisTableViewCell.cellIdentifier)
+		tableView.allowsSelection = false
 
 		activityIndicator.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
 		activityIndicator.center = view.center
@@ -81,11 +82,13 @@ class PhotoAnalysisViewController: UIViewController {
 				self?.activityIndicator.stopAnimating()
 			})
 			.bind(to: tableView.rx.items(
-				cellIdentifier: UITableViewCell.cellIdentifier,
-				cellType: UITableViewCell.self)
+				cellIdentifier: PhotoAnalysisTableViewCell.cellIdentifier,
+				cellType: PhotoAnalysisTableViewCell.self)
 			) { (row, element, cell) in
-				cell.textLabel?.text = element.description
-				cell.backgroundColor = element.archived ? .green : .white
+				cell.subjectDescription = element.description
+				cell.score = element.score
+				cell.archived = element.archived
+				cell.render()
 			}
 			.addDisposableTo(disposeBag)
 	}

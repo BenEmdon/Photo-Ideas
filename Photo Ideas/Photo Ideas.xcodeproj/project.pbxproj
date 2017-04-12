@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A2340ADF32A7EE135167731 /* Pods_Photo_IdeasTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01547B4CD58A091470655AD0 /* Pods_Photo_IdeasTests.framework */; };
+		1D1C1A551E9DC77000830627 /* PhotoAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C1A541E9DC77000830627 /* PhotoAnalysisTableViewCell.swift */; };
+		1D1C1A571E9DCFE800830627 /* SubjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C1A561E9DCFE800830627 /* SubjectsTableViewCell.swift */; };
 		1D477FD91E98633500E2B535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D477FD81E98633500E2B535 /* AppDelegate.swift */; };
 		1D477FE01E98633500E2B535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D477FDF1E98633500E2B535 /* Assets.xcassets */; };
 		1D477FE31E98633500E2B535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D477FE11E98633500E2B535 /* LaunchScreen.storyboard */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		01547B4CD58A091470655AD0 /* Pods_Photo_IdeasTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo_IdeasTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D1C1A541E9DC77000830627 /* PhotoAnalysisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAnalysisTableViewCell.swift; sourceTree = "<group>"; };
+		1D1C1A561E9DCFE800830627 /* SubjectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewCell.swift; sourceTree = "<group>"; };
 		1D477FD51E98633500E2B535 /* Photo Ideas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Ideas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D477FD81E98633500E2B535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D477FDF1E98633500E2B535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 			children = (
 				1DDCE2331E9C3C3A0039C082 /* Controllers */,
 				1DDCE2341E9C3C4B0039C082 /* SwiftyRecordButton.swift */,
+				1D1C1A541E9DC77000830627 /* PhotoAnalysisTableViewCell.swift */,
+				1D1C1A561E9DCFE800830627 /* SubjectsTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -421,7 +427,9 @@
 				1DDCE2B71E9C56E50039C082 /* UIImage+Extensions.swift in Sources */,
 				1DF1CBD41E9D6ECF00CC2470 /* SubjectsViewModel.swift in Sources */,
 				1DDCE2391E9C3D190039C082 /* PhotoAnalysisViewController.swift in Sources */,
+				1D1C1A571E9DCFE800830627 /* SubjectsTableViewCell.swift in Sources */,
 				1DDCE22F1E9C311B0039C082 /* PhotoIdeasAPI.swift in Sources */,
+				1D1C1A551E9DC77000830627 /* PhotoAnalysisTableViewCell.swift in Sources */,
 				1DDCE2B21E9C49C40039C082 /* Subject.swift in Sources */,
 				1D687CE61E9DACA6000DBF55 /* ActiveSubject.swift in Sources */,
 				1DDCE2B51E9C51350039C082 /* UITableViewCell+Extensions.swift in Sources */,

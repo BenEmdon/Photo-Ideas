@@ -34,9 +34,10 @@ class SubjectsListViewController: UIViewController {
 		titleLabel.text = "Subjects"
 		titleLabel.font = UIFont.systemFont(ofSize: 40, weight: 10)
 		titleLabel.textColor = .white
-
-		tableView.backgroundColor = .white
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.cellIdentifier)
+		tableView.rowHeight = 64
+		tableView.register(SubjectsTableViewCell.self, forCellReuseIdentifier: SubjectsTableViewCell.cellIdentifier)
+		tableView.separatorStyle = .none
+		tableView.backgroundColor = .clear
 
 		layoutViews()
 		setupRx()
@@ -61,15 +62,15 @@ class SubjectsListViewController: UIViewController {
 	}
 
 	private func setupRx() {
-
 		viewModel.activeSubjects
 			.asObservable()
 			.bind(to: tableView.rx.items(
-			cellIdentifier: UITableViewCell.cellIdentifier,
-			cellType: UITableViewCell.self)
+			cellIdentifier: SubjectsTableViewCell.cellIdentifier,
+			cellType: SubjectsTableViewCell.self)
 		) { (row, element, cell) in
-			cell.textLabel?.text = element.description
-			cell.backgroundColor = element.archived ? .green : .white
+			cell.subjectDescription = element.description
+			cell.archived = element.archived
+			cell.render()
 			}
 			.addDisposableTo(disposeBag)
 	}
