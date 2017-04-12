@@ -14,21 +14,29 @@ import RxCocoa
 class SubjectsViewModel {
 	private let provider: RxMoyaProvider<PhotoIdeasAPI>
 	private let disposeBag = DisposeBag()
+	private let modelSelected: ControlEvent<Subject>
 	let activeSubjects = ActiveSubjects.sharedInstance.subjects
+
 	var lastId: String? = nil {
 		didSet {
 			UserDefaults.standard.set(lastId, forKey: "lastId")
 		}
 	}
 
-	init(provider: RxMoyaProvider<PhotoIdeasAPI>) {
+	init(provider: RxMoyaProvider<PhotoIdeasAPI>, modelSelected: ControlEvent<Subject>) {
 		self.provider = provider
+		self.modelSelected = modelSelected
 		lastId = UserDefaults.standard.string(forKey: "lastId")
 
 		activeSubjects.asObservable().subscribe(onNext: { [weak self] (subjects) in
-				if subjects.isEmpty {
+				if subjects.filter({ !$0.archived }).isEmpty {
 					self?.fetchSubjects()
 				}
+			})
+			.addDisposableTo(disposeBag)
+
+		modelSelected.subscribe(onNext: { (subject) in
+				self.activeSubjects.value.remove(subject)
 			})
 			.addDisposableTo(disposeBag)
 	}

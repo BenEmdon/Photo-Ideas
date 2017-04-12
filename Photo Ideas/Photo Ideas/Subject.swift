@@ -48,6 +48,6 @@ extension Subject: Equatable {
 
 extension Subject: Hashable {
 	var hashValue: Int {
-		return "\(id)_\(description)_\(archived)".hashValue
+		return "\(id)_\(description)".hashValue
 	}
 }

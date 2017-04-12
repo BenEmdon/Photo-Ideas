@@ -15,6 +15,9 @@ struct PhotoAnalysisViewModel {
 	private let imageData: Data
 	private let disposeBag = DisposeBag()
 	private let activeSubjects = ActiveSubjects.sharedInstance.subjects
+	private var activeSubjectsSet: Set<Subject> {
+		return Set(activeSubjects.value)
+	}
 
 	init(imageData: Data, provider: RxMoyaProvider<PhotoIdeasAPI>) {
 		self.imageData = imageData
@@ -24,11 +27,10 @@ struct PhotoAnalysisViewModel {
 	func getSubjectsForImage() -> Observable<Set<Subject>> {
 		return requestSubjects(forImageData: imageData)
 		.map { (subjects) in
-			let intersection = self.activeSubjects.value.intersection(subjects)
+			let intersection = self.activeSubjectsSet.intersection(subjects)
 			let archivedIntersection = intersection.map { (subject) -> (Subject) in
 				return Subject(description: subject.description, score: subject.score, id: subject.id, archived: true)
 			}
-
 
 			self.activeSubjects.value = Set(archivedIntersection).union(self.activeSubjects.value)
 

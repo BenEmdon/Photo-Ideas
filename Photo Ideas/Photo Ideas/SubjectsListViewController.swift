@@ -20,7 +20,7 @@ class SubjectsListViewController: UIViewController {
 	let viewModel: SubjectsViewModel
 
 	init() {
-		viewModel = SubjectsViewModel(provider: provider)
+		viewModel = SubjectsViewModel(provider: provider, modelSelected: tableView.rx.modelSelected(Subject.self))
 		super.init(nibName: nil, bundle: nil)
 	}
 	
@@ -37,7 +37,6 @@ class SubjectsListViewController: UIViewController {
 
 		tableView.backgroundColor = .white
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.cellIdentifier)
-
 
 		layoutViews()
 		setupRx()
@@ -73,7 +72,5 @@ class SubjectsListViewController: UIViewController {
 			cell.backgroundColor = element.archived ? .green : .white
 			}
 			.addDisposableTo(disposeBag)
-
-		
 	}
 }
