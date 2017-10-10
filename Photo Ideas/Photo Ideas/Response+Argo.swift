@@ -12,14 +12,14 @@ import Argo
 
 public extension Response {
 
-	public func mapObject<T:Decodable>() throws -> T where T == T.DecodedType {
+	public func mapObject<T: Argo.Decodable>() throws -> T where T == T.DecodedType {
 		guard let jsonDictionary = try mapJSON() as? NSDictionary, let object: T = decode(jsonDictionary) else {
 			throw MoyaError.jsonMapping(self)
 		}
 		return object
 	}
 
-	public func mapObject<T: Decodable>(withKeyPath keyPath: String?) throws -> T where T == T.DecodedType {
+	public func mapObject<T: Argo.Decodable>(withKeyPath keyPath: String?) throws -> T where T == T.DecodedType {
 		guard let keyPath = keyPath else { return try mapObject() }
 
 		guard let jsonDictionary = try mapJSON() as? NSDictionary,
@@ -30,7 +30,7 @@ public extension Response {
 		return object
 	}
 
-	public func mapArray<T: Decodable>() throws -> [T] where T == T.DecodedType {
+	public func mapArray<T: Argo.Decodable>() throws -> [T] where T == T.DecodedType {
 		guard let jsonArray = try mapJSON() as? NSArray, let object: [T] = decode(jsonArray) else {
 			throw MoyaError.jsonMapping(self)
 		}
@@ -38,7 +38,7 @@ public extension Response {
 		return object
 	}
 
-	public func mapArray<T: Decodable>(withKeyPath keyPath: String?) throws -> [T] where T == T.DecodedType {
+	public func mapArray<T: Argo.Decodable>(withKeyPath keyPath: String?) throws -> [T] where T == T.DecodedType {
 		guard let keyPath = keyPath else { return try mapArray() }
 
 		guard let jsonDictionary = try mapJSON() as? NSDictionary,

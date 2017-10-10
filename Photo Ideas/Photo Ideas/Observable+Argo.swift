@@ -11,7 +11,7 @@ import RxSwift
 import Argo
 
 public extension ObservableType where E == Response {
-	public func mapObject<T: Decodable>(type: T.Type, keyPath: String? = nil) -> Observable<T> where T == T.DecodedType {
+	public func mapObject<T: Argo.Decodable>(type: T.Type, keyPath: String? = nil) -> Observable<T> where T == T.DecodedType {
 		return observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
 			.flatMap { response -> Observable<T> in
 				return Observable.just(try response.mapObject(withKeyPath: keyPath))
@@ -19,7 +19,7 @@ public extension ObservableType where E == Response {
 			.observeOn(MainScheduler.instance)
 	}
 
-	public func mapArray<T: Decodable>(type: T.Type, keyPath: String? = nil) -> Observable<[T]> where T == T.DecodedType {
+	public func mapArray<T: Argo.Decodable>(type: T.Type, keyPath: String? = nil) -> Observable<[T]> where T == T.DecodedType {
 		return observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
 			.flatMap { response -> Observable<[T]> in
 				return Observable.just(try response.mapArray(withKeyPath: keyPath))
@@ -27,7 +27,7 @@ public extension ObservableType where E == Response {
 			.observeOn(MainScheduler.instance)
 	}
 
-	public func mapObjectOptional<T: Decodable>(type: T.Type, keyPath: String? = nil) -> Observable<T?> where T == T.DecodedType {
+	public func mapObjectOptional<T: Argo.Decodable>(type: T.Type, keyPath: String? = nil) -> Observable<T?> where T == T.DecodedType {
 		return observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
 			.flatMap { response -> Observable<T?> in
 				do {
@@ -41,7 +41,7 @@ public extension ObservableType where E == Response {
 			.observeOn(MainScheduler.instance)
 	}
 
-	public func mapArrayOptional<T: Decodable>(type: T.Type, keyPath: String? = nil) -> Observable<[T]?> where T == T.DecodedType {
+	public func mapArrayOptional<T: Argo.Decodable>(type: T.Type, keyPath: String? = nil) -> Observable<[T]?> where T == T.DecodedType {
 		return observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
 			.flatMap { response -> Observable<[T]?> in
 				do {

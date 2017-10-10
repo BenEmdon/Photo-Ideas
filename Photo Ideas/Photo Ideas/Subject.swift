@@ -33,7 +33,7 @@ struct Subject {
 }
 
 // MARK: - Subject adopts the Decodable protocol. Argo is an object mapper that uses Runes (the <^> <*> <*> syntax) to turn JSON into strongly typed objects
-extension Subject: Decodable {
+extension Subject: Argo.Decodable {
 	static func decode(_ json: JSON) -> Decoded<Subject> {
 		return curry(self.init)
 		<^> json <| "description"
