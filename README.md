@@ -11,4 +11,4 @@ Photo Ideas backend uses Google's Cloud Vision API for object recognition.
 #### _Crowd sourced photo ideas?_
 After objects are recognized in the Photo Ideas pipeline they are saved to a database which acts as a set of all objects recognized. When photo ideas are requested they are fetched from this 'set of all objects' database.
 
-![](Images/Get\ ideas\ request.jpg)
+![](https://github.com/BenEmdon/Photo-Ideas/blob/master/Images/Get%20ideas%20request.jpg)
